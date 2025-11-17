@@ -22,20 +22,34 @@ module myfir (
     input logic  signed [12:0] H7,
     output logic signed [12:0] DOUT,
     output logic VOUT
-);
-localparam FILTER_TAPS = 8;
-localparam DTA_WIDTH= 13;
-logic signed 
+); 
 
-    always_ff@(posedge CLK or negedge RST_n) begin
-        if(!RST_n) begin
-            DOUT <=13'b0;
-            VOUT <=13'b0;
-        end
-        else if (VIN) begin 
-             <= DIN;
-        end
-        
-    end
+logic signed [12:0] tp_w[0:7];
+logic signed [12:0] H[00:7];
+assign H[0] = H0;
+assign H[1] = H1;
+assign H[2] = H2;
+assign H[3] = H3;
+assign H[4] = H4;
+assign H[5] = H5;
+assign H[6] = H6;
+assign H[7] = H7;
+
+
+tdl_u TDL_U (
+    .CLK(CLK),
+    .RST_n(RST_n),
+    .VIN(VIN),
+    .DIN(DIN),
+    .tp(tp_w)
+);
+
+
+
+
+
+
+
+
 
 endmodule
