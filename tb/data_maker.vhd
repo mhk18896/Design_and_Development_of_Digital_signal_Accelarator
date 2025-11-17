@@ -15,15 +15,14 @@ entity data_maker is
     RST_n   : in  std_logic;
     VOUT    : out std_logic;
     DOUT    : out std_logic_vector(NBIT-1 downto 0);
-    B0      : out std_logic_vector(NBIT-1 downto 0);
-    B1      : out std_logic_vector(NBIT-1 downto 0);
-    B2      : out std_logic_vector(NBIT-1 downto 0);
-    B3      : out std_logic_vector(NBIT-1 downto 0);
-    B4      : out std_logic_vector(NBIT-1 downto 0);
-    B5      : out std_logic_vector(NBIT-1 downto 0);
-    B6      : out std_logic_vector(NBIT-1 downto 0);
-    B7      : out std_logic_vector(NBIT-1 downto 0);
-    B8      : out std_logic_vector(NBIT-1 downto 0);
+    H0      : out std_logic_vector(NBIT-1 downto 0);
+    H1      : out std_logic_vector(NBIT-1 downto 0);
+    H2      : out std_logic_vector(NBIT-1 downto 0);
+    H3      : out std_logic_vector(NBIT-1 downto 0);
+    H4      : out std_logic_vector(NBIT-1 downto 0);
+    H5      : out std_logic_vector(NBIT-1 downto 0);
+    H6      : out std_logic_vector(NBIT-1 downto 0);
+    H7      : out std_logic_vector(NBIT-1 downto 0);
     END_SIM : out std_logic);
 end data_maker;
 
