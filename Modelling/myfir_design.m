@@ -28,8 +28,3 @@ plot(w2/pi, 20*log10(abs(h2)),'r--');
 grid on;
 xlabel('Normalized frequency');
 ylabel('dB');
-
-
-
-
-
