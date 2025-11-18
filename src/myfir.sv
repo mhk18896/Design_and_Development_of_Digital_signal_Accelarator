@@ -55,6 +55,11 @@ mac_u #(
     .TAPS(TAPS)
 ) MAC_U (
     .CLK(CLK)
+    .tp_w(tp_w),
+    .H(H),
+    .DOUT(DOUT),
+    .VOUT(VOUT)
+);
 
 
 
