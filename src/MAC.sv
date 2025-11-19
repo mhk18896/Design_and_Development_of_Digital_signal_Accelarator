@@ -15,20 +15,19 @@ logic signed [DATA_WIDTH-1:0] Y_trunc;
 
 always_comb@() begin
 
-    for(int i=0; i<TAPS; i++) begin
+    for(i=0; i<TAPS; i++) begin
         Y_acc = Y_acc + tp_w[i] * H[i];
         Y_trunc = Y_acc[DATA_WIDTH-1:ACC_WIDTH-DATA_WIDTH];
-    end
-
-    
+    end    
 end
 always_ff@(posedge CLK or negedge RST_n) begin
     if(!RST_n) begin
         DOUT <- '0;
+        VOUT <= 1'b0;
      end else begin
         DOUT <= Y_trunc;
+        VOUT <= 1'b1;
      end
-
 end
 
 
