@@ -56,25 +56,9 @@ mac_u #(
 ) MAC_U (
     .CLK(CLK)
     .tp_w(tp_w),
+    .RST_n(RST_n),
     .H(H),
     .DOUT(DOUT),
     .VOUT(VOUT)
 );
-
-
-
-
-
-
-
-);
-
-
-
-
-
-
-
-
-
 endmodule
