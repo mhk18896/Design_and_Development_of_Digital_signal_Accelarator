@@ -23,7 +23,9 @@ entity data_maker is
     H5      : out std_logic_vector(NBIT-1 downto 0);
     H6      : out std_logic_vector(NBIT-1 downto 0);
     H7      : out std_logic_vector(NBIT-1 downto 0);
-    END_SIM : out std_logic);
+    H8      : out std_logic_vector(NBIT-1 downto 0);
+    END_SIM
+     : out std_logic);
 end data_maker;
 
 architecture beh of data_maker is
@@ -40,15 +42,15 @@ architecture beh of data_maker is
 
 begin  -- beh
 
-  B0 <= conv_std_logic_vector(-26,  NBIT);
-  B1 <= conv_std_logic_vector(-56,  NBIT);
-  B2 <= conv_std_logic_vector(209,  NBIT);
-  B3 <= conv_std_logic_vector(1088, NBIT);
-  B4 <= conv_std_logic_vector(1661, NBIT);
-  B5 <= conv_std_logic_vector(1088, NBIT);
-  B6 <= conv_std_logic_vector(209,  NBIT);
-  B7 <= conv_std_logic_vector(-56,  NBIT);
-  B8 <= conv_std_logic_vector(-26,  NBIT);  
+  H0 <= conv_std_logic_vector(-26,  NBIT);
+  H1 <= conv_std_logic_vector(-56,  NBIT);
+  H2 <= conv_std_logic_vector(209,  NBIT);
+  H3 <= conv_std_logic_vector(1088, NBIT);
+  H4 <= conv_std_logic_vector(1661, NBIT);
+  H5 <= conv_std_logic_vector(1088, NBIT);
+  H6 <= conv_std_logic_vector(209,  NBIT);
+  H7 <= conv_std_logic_vector(-56,  NBIT);
+  H8 <= conv_std_logic_vector(-26,  NBIT);  
 
   process (CLK, RST_n)
     file fp_in : text open READ_MODE is "./samples.txt";

@@ -6,9 +6,9 @@ input logic CLK,
 input logic RST_n,
 input logic VIN,
 input logic signed [DATA_WIDTH-1:0] DIN,
-output logic signed [DATA_WIDTH-1:0] tp[0:TAPS-1]
+output logic signed [DATA_WIDTH-1:0] tp[0:TAPS+1]
 );
-   logic signed [DATA_WIDTH-1:0] TDL_reg [0:TAPS-1];
+   logic signed [DATA_WIDTH-1:0] TDL_reg [0:TAPS+1];
 
 
     always_ff@(posedge CLK or negedge RST_n) begin

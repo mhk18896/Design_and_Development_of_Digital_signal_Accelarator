@@ -15,15 +15,15 @@ entity data_maker is
     RST_n   : in  std_logic;
     VOUT    : out std_logic;
     DOUT    : out std_logic_vector(NBIT-1 downto 0);
-    B0      : out std_logic_vector(NBIT-1 downto 0);
-    B1      : out std_logic_vector(NBIT-1 downto 0);
-    B2      : out std_logic_vector(NBIT-1 downto 0);
-    B3      : out std_logic_vector(NBIT-1 downto 0);
-    B4      : out std_logic_vector(NBIT-1 downto 0);
-    B5      : out std_logic_vector(NBIT-1 downto 0);
-    B6      : out std_logic_vector(NBIT-1 downto 0);
-    B7      : out std_logic_vector(NBIT-1 downto 0);
-    B8      : out std_logic_vector(NBIT-1 downto 0);
+    H0      : out std_logic_vector(NBIT-1 downto 0);
+    H1      : out std_logic_vector(NBIT-1 downto 0);
+    H2      : out std_logic_vector(NBIT-1 downto 0);
+    H3      : out std_logic_vector(NBIT-1 downto 0);
+    H4      : out std_logic_vector(NBIT-1 downto 0);
+    H5      : out std_logic_vector(NBIT-1 downto 0);
+    H6      : out std_logic_vector(NBIT-1 downto 0);
+    H7      : out std_logic_vector(NBIT-1 downto 0);
+    H8      : out std_logic_vector(NBIT-1 downto 0);
     END_SIM : out std_logic);
 end data_maker;
 
@@ -41,15 +41,15 @@ architecture beh of data_maker is
 
 begin  -- beh
 
-  B0 <= conv_std_logic_vector(-26,  NBIT);
-  B1 <= conv_std_logic_vector(-56,  NBIT);
-  B2 <= conv_std_logic_vector(209,  NBIT);
-  B3 <= conv_std_logic_vector(1088, NBIT);
-  B4 <= conv_std_logic_vector(1661, NBIT);
-  B5 <= conv_std_logic_vector(1088, NBIT);
-  B6 <= conv_std_logic_vector(209,  NBIT);
-  B7 <= conv_std_logic_vector(-56,  NBIT);
-  B8 <= conv_std_logic_vector(-26,  NBIT);  
+  H0 <= conv_std_logic_vector(-26,  NBIT);
+  H1 <= conv_std_logic_vector(-56,  NBIT);
+  H2 <= conv_std_logic_vector(209,  NBIT);
+  H3 <= conv_std_logic_vector(1088, NBIT);
+  H4 <= conv_std_logic_vector(1661, NBIT);
+  H5 <= conv_std_logic_vector(1088, NBIT);
+  H6 <= conv_std_logic_vector(209,  NBIT);
+  H7 <= conv_std_logic_vector(-56,  NBIT);
+  H8 <= conv_std_logic_vector(-26,  NBIT);  
 
   process (CLK, RST_n)
     file fp_in : text open READ_MODE is "./samples.txt";

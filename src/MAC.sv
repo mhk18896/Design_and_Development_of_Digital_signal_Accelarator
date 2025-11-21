@@ -4,8 +4,8 @@ module mac_u #(
 ) (
 input logic CLK,
 input logic RST_n
-input logic signed [DATA_WIDTH-1:0] tp_w[0:TAPS-1],
-input logic signed [DATA_WIDTH-1:0] H[0:TAPS-1],
+input logic signed [DATA_WIDTH-1:0] tp_w[0:TAPS+1],
+input logic signed [DATA_WIDTH-1:0] H[0:TAPS+1],
 output logic signed [DATA_WIDTH-1:0] DOUT,
 output logic VOUT
 );
