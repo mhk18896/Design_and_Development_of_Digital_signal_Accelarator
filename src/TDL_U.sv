@@ -1,6 +1,6 @@
 module tdl_u #(
-    parameter DATA_WIDTH = 13,
-    parameter ORDER = 8;
+    parameter ORDER = 8,
+    parameter DATA_WIDTH = 13
 ) (
 input logic CLK,
 input logic RST_n,

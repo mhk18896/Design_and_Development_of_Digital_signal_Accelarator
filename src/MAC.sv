@@ -1,21 +1,21 @@
 module mac_u #(
-    parameter DATA_WIDTH = 13,
-    parameter TAPS = 8
+    parameter ORDER = 8,
+    parameter DATA_WIDTH = 13
 ) (
 input logic CLK,
-input logic RST_n
-input logic signed [DATA_WIDTH-1:0] tp_w[0:TAPS+1],
-input logic signed [DATA_WIDTH-1:0] H[0:TAPS+1],
+input logic RST_n,
+input logic signed [DATA_WIDTH-1:0] tp_w[0:ORDER],
+input logic signed [DATA_WIDTH-1:0] H[0:ORDER],
 output logic signed [DATA_WIDTH-1:0] DOUT,
 output logic VOUT
 );
-local parameter ACC_WIDTH = DATA_WIDTH*2 + $clog2(TAPS);
+local parameter ACC_WIDTH = DATA_WIDTH*2 + $clog2(ORDER);
 logic signed [ACC_WIDTH-1:0] Y_acc;
 logic signed [DATA_WIDTH-1:0] Y_trunc;
 
 always_comb@() begin
 
-    for(i=0; i<TAPS; i++) begin
+    for(i=0; i<ORDER; i++) begin
         Y_acc = Y_acc + tp_w[i] * H[i];
         Y_trunc = Y_acc[DATA_WIDTH-1:ACC_WIDTH-DATA_WIDTH];
     end    

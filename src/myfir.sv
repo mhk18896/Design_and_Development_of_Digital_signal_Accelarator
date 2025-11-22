@@ -7,7 +7,9 @@
 //
 //
 ///////////////////////////////////////////////////////////////////////////////
-module myfir (
+module myfir #(
+    parameter ORDER = 8,
+    parameter DATA_WIDTH = 13)(
     input logic CLK,
     input logic RST_n,
     input logic VIN,
@@ -25,8 +27,6 @@ module myfir (
     output logic VOUT
 ); 
 
-localparam ORDER = 8;
-localparam DATA_WIDTH = 13;
 
 logic signed [DATA_WIDTH-1:0] tp_w[0:ORDER];
 logic signed [DATA_WIDTH-1:0] H[0:ORDER];
@@ -56,7 +56,7 @@ mac_u #(
     .DATA_WIDTH(DATA_WIDTH),
     .ORDER(ORDER)
 ) MAC_U (
-    .CLK(CLK)
+    .CLK(CLK),
     .RST_n(RST_n),
     .tp_w(tp_w),
     .H(H),

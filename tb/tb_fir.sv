@@ -19,6 +19,8 @@ module tb_fir ();
    logic signed [12:0] DOUT_i;
    logic VOUT_i;
    logic END_SIM_i;
+   localparam ORDER = 8;
+   localparam DATA_WIDTH = 13;
 
    clk_gen CG(.END_SIM(END_SIM_i),
   	      .CLK(CLK_i),
@@ -39,7 +41,10 @@ module tb_fir ();
 		 .H8(H8_i),
 		 .END_SIM(END_SIM_i));
 
-   myfir UUT(.CLK(CLK_i),
+   myfir UUT #(
+	   .ORDER (ORDER),
+	   .DATA_WIDTH (DATA_WIDTH)
+   )(.CLK(CLK_i),
 	     .RST_n(RST_n_i),
 	     .DIN(DIN_i),
          .VIN(VIN_i),
