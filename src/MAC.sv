@@ -29,17 +29,4 @@ always_ff@(posedge CLK or negedge RST_n) begin
         VOUT <= 1'b1;
      end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
 endmodule 

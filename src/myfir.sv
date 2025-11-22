@@ -25,11 +25,11 @@ module myfir (
     output logic VOUT
 ); 
 
-localparam TAPS = 8;
+localparam ORDER = 8;
 localparam DATA_WIDTH = 13;
 
-logic signed [DATA_WIDTH-1:0] tp_w[0:TAPS+1];
-logic signed [DATA_WIDTH-1:0] H[0:TAPS+1];
+logic signed [DATA_WIDTH-1:0] tp_w[0:ORDER];
+logic signed [DATA_WIDTH-1:0] H[0:ORDER];
 assign H[0] = H0;
 assign H[1] = H1;
 assign H[2] = H2;
@@ -43,7 +43,7 @@ assign H[8] = H8;
 
 tdl_u #(
     .DATA_WIDTH (DATA_WIDTH),
-    .TAPS (TAPS)
+    .ORDER (ORDER)
 ) TDL_U (
     .CLK(CLK),
     .RST_n(RST_n),
@@ -54,11 +54,11 @@ tdl_u #(
 
 mac_u #(
     .DATA_WIDTH(DATA_WIDTH),
-    .TAPS(TAPS)
+    .ORDER(ORDER)
 ) MAC_U (
     .CLK(CLK)
-    .tp_w(tp_w),
     .RST_n(RST_n),
+    .tp_w(tp_w),
     .H(H),
     .DOUT(DOUT),
     .VOUT(VOUT)
